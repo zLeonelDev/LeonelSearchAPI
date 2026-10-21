@@ -1,20 +1,43 @@
 {
   "name": "leonelsearchapi",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Official JavaScript client for LeonelSearchAPI. Perform searches easily with your API key.",
-  "homepage": "https://github.com/LeonelDevStudios/LeonelSearchAPI#readme",
+  "keywords": [
+    "leonelsearchapi",
+    "search",
+    "api",
+    "client",
+    "sdk",
+    "web-search",
+    "image-search"
+  ],
+  "homepage": "https://github.com/zLeonelDev/LeonelSearchAPI#readme",
   "bugs": {
-    "url": "https://github.com/LeonelDevStudios/LeonelSearchAPI/issues"
+    "url": "https://github.com/zLeonelDev/LeonelSearchAPI/issues"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/LeonelDevStudios/LeonelSearchAPI.git"
+    "url": "git+https://github.com/zLeonelDev/LeonelSearchAPI.git"
   },
   "license": "MIT",
   "author": "LeonelDev",
   "type": "module",
+  "exports": {
+    ".": "./index.js"
+  },
   "main": "index.js",
+  "files": [
+    "index.js"
+  ],
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "npm run smoke",
+    "smoke": "node -e \"import('./index.js').then(m => { if (typeof m.LeonelSearchAPI !== 'function') { throw new Error('missing export'); } console.log('smoke ok'); })\"",
+    "prepublishOnly": "npm run smoke"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }

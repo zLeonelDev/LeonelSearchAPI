@@ -430,6 +430,36 @@ async function batchSearch(queries, type = "web") {
 
 ---
 
+## Publishing
+
+The package is published to npm automatically by GitHub Actions.
+
+### One-time setup
+
+1. Create an **Automation access token** on npmjs.com
+   (Profile → Access Tokens → Generate New Token → *Automation*).
+2. In the GitHub repo go to **Settings → Secrets and variables → Actions** and add:
+   - Name: `NPM_TOKEN`
+   - Value: the token you just created.
+
+### Releasing a new version
+
+```bash
+npm version patch   # or minor / major — updates package.json + package-lock.json
+git push origin main --follow-tags
+gh release create v1.0.3 --title "v1.0.3" --generate-notes
+```
+
+Publishing a **GitHub Release** triggers `.github/workflows/publish.yml`, which:
+
+1. Runs the `verify` job (install + smoke test + `npm pack --dry-run`).
+2. Runs `npm publish` in the `publish` job using `secrets.NPM_TOKEN`.
+
+You can also trigger it manually from the **Actions** tab with `workflow_dispatch`
+(there is a `dry-run` input that only prints what would be published).
+
+---
+
 ## License
 
 MIT © 2026 LeonelDev
