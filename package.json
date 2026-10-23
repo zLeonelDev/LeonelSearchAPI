@@ -1,6 +1,6 @@
 {
   "name": "leonelsearchapi",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Official JavaScript client for LeonelSearchAPI. Perform searches easily with your API key.",
   "keywords": [
     "leonelsearchapi",
