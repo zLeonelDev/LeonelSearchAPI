@@ -130,4 +130,4 @@ MIT © 2026 LeonelDev
 
 ## Links
 
-- API and key registration: [leonelsearchapi.qzz.io](https://leonelsearchapi.qzz.io)
+- Official site: [LeonelSearchAPI](https://leonelsearch.qzz.io)
