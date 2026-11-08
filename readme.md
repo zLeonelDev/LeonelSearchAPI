@@ -1,3 +1,5 @@
+[![Spanish](https://img.shields.io/badge/Español-README-green)](README-es.md)
+
 # LeonelSearchAPI
 
 JavaScript client for the LeonelSearchAPI. It lets you run web, image, video, and news searches from your projects using an API key.
